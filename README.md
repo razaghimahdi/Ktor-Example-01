@@ -30,3 +30,7 @@ In addition you can also extend Ktor with your own plugin very easily.
 
 #### API:
 **https://randomuser.me/**
+
+#### Some Ideas:
+**https://ktor.io**
+**https://ktor.io/learn/**
