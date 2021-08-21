@@ -28,6 +28,51 @@ and to structure your application the way you need it.
 In addition you can also extend Ktor with your own plugin very easily.
 
 
+```kotlin
+
+    /**
+     * HttpClient:
+     * Constructs an asynchronous HttpClient using the specified engineFactory
+     * and an optional block for configuring this client.
+     * which means if u want to use in IOS
+     * Just replace Android with Ios
+     */
+    
+    /**
+     * install:
+     * Installs a specific feature and optionally configure it.
+     * exp:
+     **/ 
+        serializer=KotlinxSerializer(
+        kotlinx.serialization.json.Json {
+        ignoreUnknownKeys=true // if server send extra fields just ignore
+            }
+         )
+      
+    
+    
+    private val clientAndroid = HttpClient(Android) {
+        install(JsonFeature) {
+            serializer = GsonSerializer()
+        }
+    }
+
+
+    private val clientIos = HttpClient(Ios) {
+        install(JsonFeature) {
+            serializer = GsonSerializer()
+        }
+    }
+
+
+
+```
+
+
+
+
+
+
 #### API:
 **https://randomuser.me/**
 

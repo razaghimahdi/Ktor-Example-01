@@ -11,6 +11,12 @@ import io.ktor.util.*
 @KtorExperimentalAPI
 object NetworkApi {
 
+
+    /**
+     * Constructs an asynchronous HttpClient using the specified engineFactory
+     * and an optional block for configuring this client.
+     */
+
     private val client = HttpClient(Android) {
         install(JsonFeature) {
             serializer = GsonSerializer()
