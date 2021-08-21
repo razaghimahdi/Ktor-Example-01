@@ -9,6 +9,7 @@
     app:cardElevation="6dp">
 
     <LinearLayout
+        android:padding="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -19,20 +20,31 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <ImageView
-                android:adjustViewBounds="true"
+            <androidx.cardview.widget.CardView
+                android:layout_margin="2dp"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="16dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/imageView"/>
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:adjustViewBounds="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/imageView"/>
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="8dp"/>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="0dp"
         android:layout_weight="8"
-        android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:layout_height="wrap_content" >
 
         <TextView
             android:id="@+id/txtName"

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ktor_example_01.databinding.ActivityMainBinding
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
             userAdapter.items = users
             userAdapter.notifyDataSetChanged()
             Log.i("TAG", "onCreate users: "+users.toList())
+            binding.progressBar.visibility= View.GONE
         })
 
         with(binding.recyclerView) {
