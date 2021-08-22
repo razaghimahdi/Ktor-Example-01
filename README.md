@@ -70,21 +70,6 @@ In addition you can also extend Ktor with your own plugin very easily.
 
 ```
 
-**Or event could much that simpler, check this out:**
-```kotlin
-
-        val ktorClient = KtorClientFactory().build()
-        CoroutineScope(IO).launch {
-            val users = ktorClient.get<String> {
-                url("https://randomuser.me/api/?results=20")
-                header("custom-header", "header-value")
-            }
-            println("KtorTest: ${users}")
-        }
-
-```
-
-
 
 
 
