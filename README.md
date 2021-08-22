@@ -1,6 +1,6 @@
 # Ktor-Example-01
 ## Developed by Mahdi Razzaghi Ghaleh
-my first connection network ktor app, which is show how Ktor is easy to use
+**my first connection network ktor app, which is show how Ktor is easy to use**
 
 
 ### What is Ktor?
@@ -27,6 +27,8 @@ Ktor allows you to use only what you need,
 and to structure your application the way you need it.
 In addition you can also extend Ktor with your own plugin very easily.
 
+
+**look at these examples:**
 
 ```kotlin
 
@@ -68,6 +70,20 @@ In addition you can also extend Ktor with your own plugin very easily.
 
 ```
 
+**Or event could much that simpler, check this out:**
+```kotlin
+
+        val ktorClient = KtorClientFactory().build()
+        CoroutineScope(IO).launch {
+            val users = ktorClient.get<String> {
+                url("https://randomuser.me/api/?results=20")
+                header("custom-header", "header-value")
+            }
+            println("KtorTest: ${users}")
+        }
+
+```
+
 
 
 
@@ -78,4 +94,5 @@ In addition you can also extend Ktor with your own plugin very easily.
 
 #### Some Ideas:
 **https://ktor.io**
+
 **https://ktor.io/learn/**
