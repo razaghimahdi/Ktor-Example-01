@@ -71,6 +71,9 @@ In addition you can also extend Ktor with your own plugin very easily.
 ```
 
 
+##Update:
+Added Jetpack Compose
+
 
 
 

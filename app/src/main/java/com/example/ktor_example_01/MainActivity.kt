@@ -5,10 +5,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.material.Divider
+import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ktor_example_01.databinding.ActivityMainBinding
 import com.example.ktor_example_01.networking.MainViewModel
+import com.example.ktor_example_01.networking.dto.User
 import io.ktor.util.*
 
 @KtorExperimentalAPI
@@ -16,39 +26,29 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: MainViewModel
 
-    private val userAdapter = UserAdapter()
 
 
-    private var _binding: ActivityMainBinding?=null
-    private val binding get() = _binding!!
-
-
-
+    @ExperimentalComposeUiApi
+    @ExperimentalMaterialApi
     @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        _binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        setContent {
 
-        viewModel.users.observe(this, { users ->
-            userAdapter.items = users
-            userAdapter.notifyDataSetChanged()
-            Log.i("TAG", "onCreate users: "+users.toList())
-            binding.progressBar.visibility= View.GONE
-        })
+            viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
-        with(binding.recyclerView) {
-            layoutManager = LinearLayoutManager(this@MainActivity)
-            adapter = userAdapter
+            val users=viewModel.users.value
+
+            UserListScreen(users=users, isDarkTheme = false)
+
         }
+
+
+
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding=null
-    }
+
 
 }
