@@ -10,6 +10,9 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.painterResource
 import com.example.ktor_example_01.networking.dto.User
 import com.example.ktor_example_01.theme.AppTheme
 
@@ -64,4 +67,5 @@ public fun UserListScreen(
 
 
 }
+
 

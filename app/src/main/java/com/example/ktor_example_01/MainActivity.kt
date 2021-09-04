@@ -9,11 +9,12 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.material.Divider
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.painterResource
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ktor_example_01.databinding.ActivityMainBinding
@@ -27,7 +28,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewModel: MainViewModel
 
 
-
     @ExperimentalComposeUiApi
     @ExperimentalMaterialApi
     @SuppressLint("NotifyDataSetChanged")
@@ -39,16 +39,15 @@ class MainActivity : AppCompatActivity() {
 
             viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
-            val users=viewModel.users.value
+            val users = viewModel.users.value
 
             UserListScreen(users=users, isDarkTheme = false)
+
 
         }
 
 
-
     }
-
 
 
 }
