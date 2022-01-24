@@ -1,6 +1,6 @@
 # Ktor-Example-01
 ## Developed by Mahdi Razzaghi Ghaleh
-**my first connection network ktor app, which is show how Ktor is easy to use**
+**sample of connection network ktor app, which is show how Ktor is easy to use**
 
 
 ### What is Ktor?
