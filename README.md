@@ -4,6 +4,9 @@
 
 **sample of connection network ktor app, which is show how Ktor is easy to use**
 
+## Give a Star! ⭐
+If you like or are using this project to learn or start your solution, please give it a star. Thanks!
+
 ### What is Ktor?
 
 Ktor is an asynchronous open source framework for creating microservices and web applications. 
